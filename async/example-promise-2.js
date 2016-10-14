@@ -21,13 +21,33 @@ function doWork(shouldFail) {
 //	console.log(error);
 //});
 	
+// with catch block
+//doWork(true).then(function (message) {
+//	console.log(message);
+//	return doWork(true);
+//}).then(function (message) {
+//	console.log(message);
+//	console.log('all done!');
+//}).catch(function (error) {
+//	console.log(error);
+//});
 
-doWork(true).then(function (message) {
-	console.log(message);
-	return doWork(true);
+function getLocation() {
+  return new Promise(function(resolve, reject) {
+    resolve("Bogota");
+  });
+}
+
+function getWeather(location) {
+  return new Promise(function(resolve, reject) {
+    resolve("It's 20 in " + location);
+  });
+}
+
+getLocation().then(function (location) {
+  return getWeather(location);
 }).then(function (message) {
-	console.log(message);
-	console.log('all done!');
+  console.log(message);
 }).catch(function (error) {
-	console.log(error);
+  console.log(error);
 });
