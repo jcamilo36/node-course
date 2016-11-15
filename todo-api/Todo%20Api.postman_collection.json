@@ -1,0 +1,99 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Todo Api",
+		"_postman_id": "587dfc6d-d425-4b2a-b878-db8d949a45cb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /todos",
+			"request": {
+				"url": "{{host}}/todos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"registryType\": \"B\",\n    \"email\": \"jcortes@hugeinc.com\",\n    \"locale\":{\n        \"country\": \"US\",\n        \"language\": \"EN\"\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET /todos/:id",
+			"request": {
+				"url": "{{host}}/todos/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /todos",
+			"request": {
+				"url": "{{host}}/todos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"Buy milk\",\n\t\"completed\": false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /todos/:id",
+			"request": {
+				"url": "{{host}}/todos/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /todos/:id",
+			"request": {
+				"url": "{{host}}/todos/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"Walk the dog\",\n\t\"completed\": true,\n\t\"hello\": \"world\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
