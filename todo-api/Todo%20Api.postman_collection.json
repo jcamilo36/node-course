@@ -33,16 +33,13 @@
 				"url": "{{host}}/todos/1",
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "PUT /todos",
+			"name": "POST /todos",
 			"request": {
 				"url": "{{host}}/todos",
 				"method": "POST",
@@ -67,10 +64,7 @@
 				"url": "{{host}}/todos/1",
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -90,6 +84,26 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"description\": \"Walk the dog\",\n\t\"completed\": true,\n\t\"hello\": \"world\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST /users",
+			"request": {
+				"url": "{{host}}/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"jcortes@hugeinc.com\",\n\t\"password\": \"1234567\"\n}"
 				},
 				"description": ""
 			},
