@@ -17,6 +17,11 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"description": ""
+					},
+					{
+						"key": "Auth",
+						"value": "{{authToken}}",
+						"description": ""
 					}
 				],
 				"body": {
@@ -30,9 +35,15 @@
 		{
 			"name": "GET /todos/:id",
 			"request": {
-				"url": "{{host}}/todos/1",
+				"url": "{{host}}/todos/3",
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Auth",
+						"value": "{{authToken}}",
+						"description": ""
+					}
+				],
 				"body": {},
 				"description": ""
 			},
@@ -48,11 +59,16 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"description": ""
+					},
+					{
+						"key": "Auth",
+						"value": "{{authToken}}",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"description\": \"Buy milk\",\n\t\"completed\": false\n}"
+					"raw": "{\n\t\"description\": \"Fix the table\",\n\t\"completed\": false\n}"
 				},
 				"description": ""
 			},
@@ -61,9 +77,15 @@
 		{
 			"name": "DELETE /todos/:id",
 			"request": {
-				"url": "{{host}}/todos/1",
+				"url": "{{host}}/todos/3",
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Auth",
+						"value": "{{authToken}}",
+						"description": ""
+					}
+				],
 				"body": {},
 				"description": ""
 			},
@@ -72,18 +94,23 @@
 		{
 			"name": "PUT /todos/:id",
 			"request": {
-				"url": "{{host}}/todos/1",
+				"url": "{{host}}/todos/3",
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
 						"value": "application/json",
 						"description": ""
+					},
+					{
+						"key": "Auth",
+						"value": "{{authToken}}",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"description\": \"Walk the dog\",\n\t\"completed\": true,\n\t\"hello\": \"world\"\n}"
+					"raw": "{\n\t\"completed\": true\n}"
 				},
 				"description": ""
 			},
@@ -93,6 +120,26 @@
 			"name": "POST /users",
 			"request": {
 				"url": "{{host}}/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"jcortes@hugeinc.com\",\n\t\"password\": \"1234567\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST /users/login",
+			"request": {
+				"url": "{{host}}/users/login",
 				"method": "POST",
 				"header": [
 					{
